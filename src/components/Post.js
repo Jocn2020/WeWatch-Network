@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import { gapi } from 'gapi-script';
 import axios from 'axios';
 import { auth } from './firebase'; 
 import { FaThumbsUp, FaRegThumbsUp } from 'react-icons/fa';
@@ -35,15 +32,16 @@ export default class Post extends Component {
     componentDidMount(){
         var loc = this.props.location.pathname;
         auth.onAuthStateChanged((user) => {
-            var curr_user = null;
+            var curr_user = "";
             var like = false;
             if (user) {
-                console.log(user.displayName);
-                curr_user = user;
-                axios.get(`http://localhost:5000/posts/${loc.replace('/post/', '')}`)
+                curr_user = user.displayName;
+              // get User info about username and like the post or not
+            } 
+            axios.get(`http://localhost:5000/posts/${loc.replace('/post/', '')}`)
                 .then(res => {
                     if(res != null){
-                        like = res.data.likes.includes(user.displayName);
+                        like = res.data.likes.includes(curr_user);
                     this.setState({
                         title: res.data.title,
                         video_url: res.data.vidurl,
@@ -52,7 +50,7 @@ export default class Post extends Component {
                         uploader: res.data.uploader,
                         likes_num: res.data.likes.length,
                         comments: res.data.comments,
-                        username: curr_user.displayName,
+                        username: curr_user,
                         like: like
                     })
                     }
@@ -60,8 +58,6 @@ export default class Post extends Component {
                 .catch(err =>{
                     alert(err);
                 })
-              // get User info about username and like the post or not
-            }
         })
         console.log(this.props.location.pathname.replace('/post/', ''));
     }
