@@ -46,8 +46,6 @@ export default class HomePage extends Component {
                 this.setState({
                     username: curr_user.displayName
                 })
-            } else {
-                alert('Make sure you login first in order to access all features')
             }
         })
         axios.get('http://localhost:5000/posts')
@@ -63,6 +61,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <h1>Posted Videos</h1>
+                <h6>{this.state.username == "" ? "Please Login to access more features": void(0)}</h6>
                 <table className="table">
                     <tbody>
                         {this.postList()}
