@@ -1,70 +1,53 @@
-# Getting Started with Create React App
-
+# WeWatch Network
+WeWatch Network is a Social Media Web Application where users can shared their favourite youtube video and make a post for everyone. Users can also interact with another user and get friends to have fun.
+This website can be accessed in ...
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
+These are the following features for this App, more updates in the future:
+1. Video Post
+   User can create a video post containing title, description and youtube video url. Moreover, User can watch another users posts on the homepage. (currently edit post hasn't implemented yet) 
+2. User Authentication
+   User can sign up and make their account in order to fully access all features available and easier to interact. The authentication was implemented using Firebase and stored the user authentication data on Google Cloud Platform (GCP).
+3. Like and Comment
+   On each post, if the user like the post, they can appreciate it by pressing the like button. User can also comment regarding the post to share their thought.
+4. Advanced Search
+   There are 3 search features currently available for the user, will show first 10 results available:
+   1. Post Search: Search available post which have title related to the following search (Capital Sensitive).
+   2. Video Search: Search Video from youtube and showed first 10 relevant videos based on youtube recommendation (Implemented using Youtube Search API).
+   3. User Search: Search available user currently registered on the website.
+5. Friends Features
+   Friend feature is available in order to make easier user interaction. There are 4 states on friend connection:
+   1. Add Friend, User can add another user to become friend. Then, wait for another user to accept friend request.
+   2. Accept Request, User can either accept or reject friend request from another user.
+   3. Friend Requested, User in state of waiting its request to be accepted, can cancel the request as well.
+   4. Friend, User and another user have become friend.
+6. User Profile
+   Each user will have their own profile and can see another user profile. The profile contains username, friend status and all posts from the profile's user.
+   
+## Tools/Framework
+This website was build using the following tools/framework:
+1. ReactJS, using component class to maintain almost all frontend function and backend request.
+2. NodeJS, for backend and handling database model.
+3. ExpressJS, handling server-side for NodeJS framework.
+4. MongoDB, storing all model database in NoSQL database form.
+5. Firebase, handling user authentication and session.
+6. Youtube API, handling youtube request for getting video's data and perfom youtube search.
+7. Bootstrap and MaterialUI, handling frontend page HTML design.
+8. ReactPlay, enabling video play in webpage.
 
-In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Updates
+In the next update, These following updates will be added for user convinience:
+1. Post and Profile Edit
+   User will be able to edit their own post (title and description) and profile (self desciption).
+2. Friends Request and Post Notification
+   User will be notified when there's friend request from another user
+3. Save and Share Post
+   User will be able save their preferrenced video and share some fun posts to their friends.
+4. Post Tags
+   User will be able to add tags which relevant to their post. Search features based on tags will also be available.
+5. Chat Features
+   User will have chat features to send messages to their friend or anyone.
+7. Improving Web Design
+   In current state, most of the program were just focuss on its functionality. Currently I also learn how to make responsive frontend using css/scss.
