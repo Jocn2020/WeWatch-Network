@@ -55,7 +55,6 @@ export default class Profile extends Component {
         var profile_name = this.props.location.pathname.replace('/profile/', ''); // get username
         auth.onAuthStateChanged((user) => {
             if (user) {
-                var own = false // check if its user own profile
                 var relation = "";
 
                     axios.all([ // get both users friend info
@@ -92,6 +91,13 @@ export default class Profile extends Component {
                     }))
                     .then(this.findPosts(this.props.location.pathname))
                 }
+            else{
+                this.setState({
+                    profileName: profile_name,
+                    status: "anonymous"
+                })
+                this.findPosts(this.props.location.pathname)
+            }
               // User is signed in.
             })
     }
