@@ -48,7 +48,7 @@ export default class HomePage extends Component {
                 })
             }
         })
-        axios.get('http://localhost:5000/posts')
+        axios.get(`${window.location.hostname}:5000/posts`)
         .then((res) => {
             this.setState({
                 posts: res.data
