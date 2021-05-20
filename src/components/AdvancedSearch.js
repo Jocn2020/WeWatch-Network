@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { auth } from './firebase';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { gapi } from 'gapi-script';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { FaWindows } from 'react-icons/fa';
 
 
 export default class AdvancedSearch extends Component {
@@ -110,7 +107,7 @@ export default class AdvancedSearch extends Component {
 
     postList(type){
         return this.state.result.slice(0, 10).map(result => {
-            if(type == "Post"){
+            if(type === "Post"){
                 return (
                 <tr>
                     <td><img src={result.thumbnail} class="img-thumbnail" alt="..."/></td>
@@ -119,7 +116,7 @@ export default class AdvancedSearch extends Component {
                     <td><Link to={"/post/"+result._id}>View Post</Link></td>
                 </tr>
                 )
-            } else if (type == "Video") {
+            } else if (type === "Video") {
                 var video = result.snippet;
                 return (
                 <tr  onClick={() => {window.location = "https://www.youtube.com/watch?v=" + result.id.videoId}}>
@@ -128,7 +125,7 @@ export default class AdvancedSearch extends Component {
                     <td>{video.channelTitle}</td>
                 </tr>
                 )
-            } else if (type == "User"){
+            } else if (type === "User"){
                 return (
                     <tr>
                         <td><Link to={"/profile/"+ result.username}>{result.username}</Link></td>
