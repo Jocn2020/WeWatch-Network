@@ -63,7 +63,7 @@ export default class Post extends Component {
     }
 
     handleLike(e){
-        if(this.state.username == ""){
+        if(this.state.username === ""){
             alert("Please login first");
         }
         else{
@@ -90,7 +90,7 @@ export default class Post extends Component {
     }
 
     handleAddComment(e){
-        if(this.state.username == ""){
+        if(this.state.username === ""){
             e.target.value = "";
             alert("Please login first");
         }
