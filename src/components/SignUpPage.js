@@ -53,7 +53,7 @@ export default class SignUpPage extends Component {
             })
             alert(this.state.error);
         }
-        else if (this.state.password != this.state.passwordCheck) {
+        else if (this.state.password !== this.state.passwordCheck) {
             this.setState({
                 password: '',
                 passwordCheck: '',
@@ -90,7 +90,7 @@ export default class SignUpPage extends Component {
     }
 
     showError() {
-        if (this.state.error != '') {
+        if (this.state.error !== '') {
             alert(this.state.error);
         }
     }
