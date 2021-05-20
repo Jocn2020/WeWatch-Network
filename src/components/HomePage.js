@@ -31,7 +31,7 @@ export default class HomePage extends Component {
     }
 
     deletePost(currpost){
-        if(this.state.username == currpost.uploader){
+        if(this.state.username === currpost.uploader){
             return (
             <td><Link to={"/post/"+currpost._id}>View Edit</Link></td>
             )
@@ -61,7 +61,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <h1>Posted Videos</h1>
-                <h6>{this.state.username == "" ? "Please Login to access more features": void(0)}</h6>
+                <h6>{this.state.username === "" ? "Please Login to access more features": void(0)}</h6>
                 <table className="table">
                     <tbody>
                         {this.postList()}
