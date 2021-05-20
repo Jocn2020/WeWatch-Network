@@ -82,7 +82,7 @@ export default class Navbar extends Component {
     render() {
         var authentication_button = this.inAndOut();
         return (
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">WeWatch</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
