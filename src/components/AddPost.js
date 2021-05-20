@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
-import { useState, useEffect } from 'react'
-import firebase from "firebase/app";
 import "firebase/auth";
 import { auth } from "./firebase";
 import { gapi } from 'gapi-script';
@@ -111,7 +107,7 @@ export default class Video extends Component {
 
                     var video = response.result.items;
                     console.log(video.length)
-                    if(video.length == 0){
+                    if(video.length === 0){
                         alert("Invalid url");
                         this.props.history.push('/add-post');
                     }
