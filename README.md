@@ -1,6 +1,7 @@
 # WeWatch Network
 WeWatch Network is a Social Media Web Application where users can shared their favourite youtube video and make a post for everyone. Users can also interact with another user and get friends to have fun.<br />
-This website can be accessed in https://wewatch-network.herokuapp.com/ (currently not working on safari).<br /> 
+This website can be accessed in https://wewatch-network.herokuapp.com/ (currently not working on safari).<br />
+Note: The website will sleep (due heroku free hosting regulation) from 11:00 PM - 05:00 AM EST <br /> 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
 
 ## Features
