@@ -139,7 +139,7 @@ export default class Profile extends Component {
         var buttonPressed = e
         console.log(e)
         var friend = null
-        if(buttonPressed == 'add'){
+        if(buttonPressed === 'add'){
             friend = {
                 username: this.state.username,
                 friend: this.state.profileName,
@@ -151,7 +151,7 @@ export default class Profile extends Component {
                 })
             })
             .catch(err => alert(err))
-        } else if(buttonPressed == 'accept'){
+        } else if(buttonPressed === 'accept'){
             friend = {
                 username: this.state.username,
                 friend: this.state.profileName,
@@ -162,7 +162,7 @@ export default class Profile extends Component {
                     status: 'friend'
                 })
             })
-        } else if(buttonPressed == 'reject'){
+        } else if(buttonPressed === 'reject'){
             friend = {
                 username: this.state.profileName,
                 friend: this.state.username,
@@ -173,7 +173,7 @@ export default class Profile extends Component {
                     status: 'nothing'
                 })
             })
-        } else if(buttonPressed == 'cancel'){
+        } else if(buttonPressed === 'cancel'){
             friend = {
                 username: this.state.username,
                 friend: this.state.profileName,
@@ -224,7 +224,7 @@ export default class Profile extends Component {
         var button = null;
         if(this.state.status == "nothing"){
             button = <button class="btn btn-primary" type="submit" onClick={this.handleButtonPress.bind(this, "add")}>Add Friend</button>
-        } else if (this.state.status == "accept?"){
+        } else if (this.state.status === "accept?"){
             button = 
             <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={this.handleClick} color="secondary" variant="contained">
@@ -240,7 +240,7 @@ export default class Profile extends Component {
               <MenuItem onClick={this.handleButtonPress.bind(this, "reject")}>Reject</MenuItem>
             </Menu>
           </div>
-        } else if (this.state.status == "requested"){
+        } else if (this.state.status === "requested"){
             button = 
             <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={this.handleClick} color="secondary" variant="contained">
@@ -255,7 +255,7 @@ export default class Profile extends Component {
               <MenuItem onClick={this.handleButtonPress.bind(this, "cancel")}>Cancel Request</MenuItem>
             </Menu>
           </div>
-        } else if (this.state.status == "friend"){
+        } else if (this.state.status === "friend"){
             button = 
             <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={this.handleClick} color="primary" variant="contained">
